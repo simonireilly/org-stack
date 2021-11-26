@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dia": "yarn cdk-dia --tree .build/cdk.out/tree.json",
     "schemas": "npx typescript-json-schema --tsNodeRegister true --required true ./src/entities/organisations/index.ts Organisation",
     "test": "sst test",
     "start": "sst start",
@@ -30,6 +31,7 @@
     "@serverless-stack/resources": "0.53.0",
     "ajv": "^8.8.2",
     "ajv-formats": "^2.1.1",
+    "cdk-dia": "^0.4.0",
     "pino": "^7.4.1"
   }
 }

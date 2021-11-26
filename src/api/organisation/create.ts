@@ -1,8 +1,6 @@
-import {
-  APIGatewayProxyHandlerV2,
-  APIGatewayProxyStructuredResultV2,
-} from 'aws-lambda';
+import { APIGatewayProxyHandlerV2 } from 'aws-lambda';
 import { validator } from '../../entities/organisations';
+import { response } from '../../utils/response';
 
 export const handler: APIGatewayProxyHandlerV2 = async (event, _) => {
   const { body } = event;
@@ -19,14 +17,3 @@ export const handler: APIGatewayProxyHandlerV2 = async (event, _) => {
     });
   }
 };
-
-const response = (
-  statusCode: number,
-  body: any
-): APIGatewayProxyStructuredResultV2 => ({
-  statusCode,
-  body: JSON.stringify(body),
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});

@@ -1,0 +1,246 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "simonireilly-cloudguru-user-hierarchy-my-stack" {
+    subgraph "cluster-SubGraph.simonireilly-cloudguru-user-hierarchy-my-stack" {
+      graph [
+        label = "simonireilly-cloudguru-user-hierarchy-my-stack",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
+      ];
+      "simonireilly-cloudguru-user-hierarchy-my-stack/OrganisationsUserPool" [
+        label = "\nOrganisationsUserPool",
+        fontsize = 12,
+        image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_Amazon-Cognito_64.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.682,
+      ];
+      "simonireilly-cloudguru-user-hierarchy-my-stack/OrganisationsClient" [
+        label = " OrganisationsClient",
+        fontsize = 12,
+        image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_Amazon-Cognito_64.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      "simonireilly-cloudguru-user-hierarchy-my-stack/Table/Table" [
+        label = " Table",
+        fontsize = 12,
+        image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Database/64/Arch_Amazon-DynamoDB_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      subgraph "cluster-SubGraph.Api" {
+        graph [
+          label = "Api",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Api" [
+          label = " Api",
+          fontsize = 12,
+          image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "simonireilly-cloudguru-user-hierarchy-my-stack/Api/LogGroup" [
+          label = " LogGroup",
+          fontsize = 12,
+          image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_POST_--organisation" [
+          label = " Lambda POST  \norganisation",
+          fontsize = 12,
+          image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_POST_--organisation" [
+          label = " Route POST  \norganisation",
+          fontsize = 12,
+          image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_POST_--organisation--{organisation_id}--user" [
+          label = " Lambda POST  \norganisation \n{organisation id} \nuser",
+          fontsize = 12,
+          image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.9139999999999997,
+        ];
+        "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_POST_--organisation--{organisation_id}--user" [
+          label = " Route POST  \norganisation \n{organisation id} \nuser",
+          fontsize = 12,
+          image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 2.114,
+        ];
+        "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_PUT_--organisation--{organisation_id}--user" [
+          label = " Lambda PUT  \norganisation \n{organisation id} \nuser",
+          fontsize = 12,
+          image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.9139999999999997,
+        ];
+        "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_PUT_--organisation--{organisation_id}--user" [
+          label = " Route PUT  \norganisation \n{organisation id} \nuser",
+          fontsize = 12,
+          image = "/home/simon/code/stacks/org-stack/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 2.114,
+        ];
+      }
+    }
+  }
+  "simonireilly-cloudguru-user-hierarchy-my-stack/OrganisationsClient" -> "simonireilly-cloudguru-user-hierarchy-my-stack/OrganisationsUserPool" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Api" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Api/LogGroup" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/LogGroup" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Api" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_POST_--organisation" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Table/Table" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_POST_--organisation" -> "simonireilly-cloudguru-user-hierarchy-my-stack/OrganisationsUserPool" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_POST_--organisation" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Api" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_POST_--organisation" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_POST_--organisation" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_POST_--organisation--{organisation_id}--user" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Table/Table" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_POST_--organisation--{organisation_id}--user" -> "simonireilly-cloudguru-user-hierarchy-my-stack/OrganisationsUserPool" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_POST_--organisation--{organisation_id}--user" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Api" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_POST_--organisation--{organisation_id}--user" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_POST_--organisation--{organisation_id}--user" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_PUT_--organisation--{organisation_id}--user" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Table/Table" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_PUT_--organisation--{organisation_id}--user" -> "simonireilly-cloudguru-user-hierarchy-my-stack/OrganisationsUserPool" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_PUT_--organisation--{organisation_id}--user" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Api" [
+    dir = "both",
+  ];
+  "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Route_PUT_--organisation--{organisation_id}--user" -> "simonireilly-cloudguru-user-hierarchy-my-stack/Api/Lambda_PUT_--organisation--{organisation_id}--user" [
+    dir = "both",
+  ];
+}

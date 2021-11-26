@@ -21,7 +21,7 @@ Inspired by complex IAM and RBAC, multi-tenant to multi-org relationships.
 ## Reading
 
 - Basics of RBAC with appsync and cognito: https://theburningmonk.com/2021/03/the-case-for-and-against-amazon-cognito/
-- Advanced custom multi-tenant to multi-org: https://theburningmonk.com/2021/03/the-case-for-and-against-amazon-cognito/
+- Advanced custom multi-tenant to multi-org: https://theburningmonk.com/2021/03/how-to-secure-multi-tenant-applications-with-appsync-and-cognito/
 - Further group level controls for Cognito: https://theburningmonk.com/2021/09/group-based-auth-with-appsync-lambda-authoriser/
 
 ## Design
