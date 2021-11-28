@@ -3,8 +3,8 @@ import { APIOrganisation } from './type';
 
 export const schema: JSONSchemaType<APIOrganisation> = {
   $schema: 'http://json-schema.org/draft-07/schema#',
-  description:
-    'An organisation is the authentication primitive. Users can belong to many\norganisations, but they always have one parent.',
+  description: `An organisation is the authentication primitive. Users can belong to many
+    organisations, but they always have one parent.`,
   examples: [
     {
       id: '74aedaae-9c58-49f6-8003-e8667becf5a0',
@@ -25,7 +25,12 @@ export const schema: JSONSchemaType<APIOrganisation> = {
       maxLength: 16,
       type: 'string',
     },
+    adminEmail: {
+      description: 'The organisation owners email',
+      format: 'email',
+      type: 'string',
+    },
   },
-  required: ['id', 'name'],
+  required: ['name', 'adminEmail'],
   type: 'object',
 };

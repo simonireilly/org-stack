@@ -20,11 +20,18 @@ export interface APIOrganisation {
    * @maxLength 16
    */
   name: string;
+  /**
+   * The organisation owners email
+   *
+   * @format email
+   */
+  adminEmail: string;
 }
 
 export const examples: APIOrganisation[] = [
   {
     id: '74aedaae-9c58-49f6-8003-e8667becf5a0',
     name: 'Pauls scooters',
+    adminEmail: 'paul@pauls-scooters.example.com',
   },
 ];
