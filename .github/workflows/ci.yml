@@ -9,6 +9,10 @@ jobs:
     name: Continuous Integration
     runs-on: ubuntu-latest
     environment: preview
+    env:
+      AWS_REGION: eu-west-1
+      AWS_SECRET_ACCESS_KEY: test-secret-key
+      AWS_ACCESS_KEY_ID: test-key-id
 
     steps:
       - name: Checkout
