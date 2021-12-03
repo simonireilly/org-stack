@@ -1,6 +1,7 @@
 import * as sst from '@serverless-stack/resources';
 import * as cdk from '@aws-cdk/core';
 import * as cognito from '@aws-cdk/aws-cognito';
+import * as iam from '@aws-cdk/aws-iam';
 import { TableFieldType } from '@serverless-stack/resources';
 
 export class AuthStack extends sst.Stack {
@@ -41,7 +42,7 @@ export class AuthStack extends sst.Stack {
 
     organisationsPool.addDomain('CognitoDomain', {
       cognitoDomain: {
-        domainPrefix: `${this.stage}`,
+        domainPrefix: `${this.stage}-hierarchy`,
       },
     });
 
@@ -63,8 +64,8 @@ export class AuthStack extends sst.Stack {
             implicitCodeGrant: true,
           },
           scopes: [cognito.OAuthScope.OPENID],
-          callbackUrls: ['https://my-app-domain.com/welcome'],
-          logoutUrls: ['https://my-app-domain.com/signin'],
+          callbackUrls: ['https://oauth.pstmn.io/v1/callback'],
+          logoutUrls: ['https://localhost'],
         },
       }
     );
@@ -92,7 +93,21 @@ export class AuthStack extends sst.Stack {
         },
       },
       routes: {
-        'POST /organisation': 'src/api/organisation/create.handler',
+        'POST /organisation': {
+          handler: 'src/api/organisation/create.handler',
+          permissions: [
+            new iam.PolicyStatement({
+              actions: [
+                'cognito-idp:AdminCreateUser',
+                'cognito-idp:AdminDisableUser',
+                'cognito-idp:AdminEnableUser',
+                'cognito-idp:AdminGetUser',
+              ],
+              effect: iam.Effect.ALLOW,
+              resources: [organisationsPool.userPoolArn],
+            }),
+          ],
+        },
         'POST /organisation/{organisation_id}/user':
           'src/api/organisation/user/create.handler',
         'PUT /organisation/{organisation_id}/user':
@@ -102,6 +117,8 @@ export class AuthStack extends sst.Stack {
 
     this.addOutputs({
       apiUrl: api.url,
+      clientId: organisationsClient.userPoolClientId,
+      loginDomain: `https://${this.stage}-hierarchy.auth.${this.region}.amazoncognito.com`,
     });
   }
 }

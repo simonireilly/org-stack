@@ -1,0 +1,31 @@
+on:
+  pull_request:
+    branches: [main]
+
+name: Lint, Build, Test
+
+jobs:
+  ci:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    environment: preview
+    env:
+      AWS_REGION: eu-west-1
+      AWS_SECRET_ACCESS_KEY: test-secret-key
+      AWS_ACCESS_KEY_ID: test-key-id
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install node version
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          cache: "yarn"
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn build
+
+      - run: yarn test
